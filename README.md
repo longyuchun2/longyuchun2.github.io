@@ -1,110 +1,226 @@
-# Funday -- 个人简历模板
+# panthera-jekyll
 
-<a href='http://gitee.com/xiaodan_yu/resume.io/stargazers'><img src='http://gitee.com/xiaodan_yu/resume.io/badge/star.svg?theme=dark' alt='star'></img></a>
-<a href='http://gitee.com/xiaodan_yu/resume.io/members'><img src='http://gitee.com/xiaodan_yu/resume.io/badge/fork.svg?theme=dark' alt='fork'></img></a>
+[![Gem Version](https://badge.fury.io/rb/panthera-jekyll.svg)](https://badge.fury.io/rb/panthera-jekyll)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](code-of-conduct.md)
+<!-- [![Jekyll Themes Shield](https://img.shields.io/badge/featured%20on-JT-red.svg)](https://jekyll-themes.com) -->
 
-## 名字释义
+*panthera-jekyll is a Jekyll theme for GitHub Pages and Jekyll sites. You can [preview the theme to see what it looks like](https://demothemes.github.io/panthera-jekyll), or even [use it today](#installation).*
 
-<strong>Funday</strong>，是星期八，开心Day的意思。以前很多玩笑都是说要等星期八才能实现，OK，Then it happened now!
+<div style="text-align: center;">
+  <img src="/screenshot.png" alt="panthera-jekyll" style="width: 100%; max-width: 750px;" />
+</div>
 
-希望每个人在使用了Funday之后在找工作的时候都是处在星期八，开开心心，快快乐乐，轻轻松松拿到心仪的多金的Offer！
+## Installation
 
-## 使用方法
+### Building a Jekyll Site
 
-1. 修改`_config.yml`文件中的内容
+Add this line to your Jekyll site's `Gemfile`:
 
-```
-# 个人名称或昵称
-name: xiaoxiao
-# 页面个人头像信息中地址展示信息
-location: 大连
-# 页面个人头像信息中公司展示信息
-company: IBM
-# 页面个人头像信息中职位展示信息
-position: Java开发工程师
-# 页面个人头像信息中GITHUB展示信息
-github: https://github.com/XXXX
-# 页面个人头像信息中Facebook展示信息
-facebook: https://www.facebook.com/XXXX
-# 页面个人头像信息中电话展示信息
-phone: 1580424XXXX
-# 页面个人头像信息中EMAIL展示信息
-email: xxxx@xxx.com
-
-#本项目的baseurl
-baseurl: "/resume.io"
+```ruby
+gem "panthera-jekyll"
 ```
 
-2. 修改个人头像信息
+And add this line to your Jekyll site's `_config.yml`:
 
-	修改 `_config.yml` 文件中内容
-
-3. 修改基本信息
- 
-	修改 `_includes/resumer_01-basic.html` 文件中内容
-
-4. 修改职业技能
-
-    修改 `_includes/resumer_02-profetional.html` 文件中内容
-
-5. 修改教育经历
-
-    修改 `_includes/resumer_03-education.html` 文件中内容
-
-6. 修改工作经历
-
-    修改 `_includes/resumer_04-experience.html` 文件中内容
-
-7. 修改获得证书
-
-	修改 `_includes/resumer_05-certification.html` 文件中内容
-
-8. 修改个人作品
-
-	修改 `_includes/resumer_06-personal_project.html` 文件中内容
-
-
-## 本地搭建
-
-在本地安装[Jekyll](https://jekyllrb.com/).
-然后在项目目录执行`jekyll s`命令,如下
-
-```bash
-[root@localhost ~]# jekyll s
-Configuration file: C:/..../resume.io/_config.yml
-            Source: C:/..../resume.io
-       Destination: C:/..../resume.io/_site
- Incremental build: disabled. Enable with --incremental
-      Generating...
-                    done in 0.371 seconds.
-  Please add the following to your Gemfile to avoid polling for changes:
-    gem 'wdm', '>= 0.1.0' if Gem.win_platform?
- Auto-regeneration: enabled for 'C:/..../resume.io'
-    Server address: http://127.0.0.1:4000/resume.io/
-  Server running... press ctrl-c to stop.
+```yaml
+theme: panthera-jekyll
 ```
 
-然后可以访问[http://127.0.0.1:4000/resume.io/](http://127.0.0.1:4000/resume.io/)来访问本地的服务了。
+And then execute:
 
+    $ bundle
 
-## 在线预览
+Or install it yourself as:
 
-[非你莫属--个人简历模板](http://xiaodan_yu.gitee.io/resume.io)
+    $ gem install panthera-jekyll
 
-## 截图预览
+### Building a Github Page
 
-![01.png](http://xiaodan_yu.gitee.io/resume.io/snapshot/11_01.png)
+Add this line to your Github Page's `_config.yml`:
 
-![02.png](http://xiaodan_yu.gitee.io/resume.io/snapshot/11_02.png)
+```yaml
+remote_theme: christianezeani/panthera-jekyll
+```
 
-![03.png](http://xiaodan_yu.gitee.io/resume.io/snapshot/11_03.png)
+## Customizing
 
-![04.png](http://xiaodan_yu.gitee.io/resume.io/snapshot/11_04.png)
+### Configuration variables
 
+panthera-jekyll will respect the following variables, if set in your site's `_config.yml`:
 
-## 参考
+```yml
+title: [The title of your site or Profile Name]
+subtitle: [A brief subtitle or job title]
+description: [A short description of your site's purpose]
+```
 
-本简历模板基于[Certy](http://sc.chinaz.com/moban/170307198220.htm)修改而来。保留了所有的样式，基于Jekyll重构了页面框架，并去掉了一些没有必要的内容，整合一页简历。
+To configure the left side set the following variables as shown below:
 
-## 开源协议
-[MIT](https://gitee.com/xiaodan_yu/resume.io/blob/master/LICENSE)
+```yml
+left_side:
+  background_image: [Absolute or relative image url]
+  background_color: [CSS background color, e.g. "#F00". We strongly recommend quoting this value. Don't worry about the transparency of the background, we've taken care of that.]
+  close_button_color: [CSS background color, e.g. "#F00". We strongly recommend quoting this value.]
+  text_color: [CSS background color, e.g. "#F00". We strongly recommend quoting this value.]
+```
+
+#### Example
+
+```yml
+left_side:
+  background_image: "./assets/images/left-background.jpg"
+  background_color: "#F00"
+  close_button_color: "#F00"
+  text_color: "#F00"
+```
+
+To configure side menu, set the following variables:
+
+```yml
+menu:
+  - text: [Menu text]
+    link: [Relative page link with the '/' prefix]
+    icon: [Menu Icon]
+```
+
+#### Example
+
+```yml
+menu:
+  - text: Portfolio
+    link: /
+    icon: ""
+
+  - text: Skills & Offers
+    link: /skills-and-offers
+    icon: ""
+```
+
+To configure social links, set the following variables:
+
+```yml
+social_icons:
+  - name: [Socialmedia title]
+    link: [Social link]
+    icon: [Icon class]
+```
+
+#### Example
+
+```yml
+social_icons:
+  - name: linkedin
+    link: https://www.linkedin.com/christianezeani
+    icon: fab fa-linkedin
+
+  - name: github
+    link: https://github.com/christianezeani
+    icon: fab fa-github-square
+```
+
+To configure footer, set the following variables:
+
+```yml
+footer:
+  copyright_text: [The copyright text. Value should be quoted]
+```
+
+#### Example
+
+```yml
+footer:
+  copyright_text: "&copy; Christian Ezeani"
+```
+
+panthera-jekyll currently supports the following icons:
+
+* [FontAwesome](https://fontawesome.com) (version 5.9.0)
+
+### Stylesheet
+
+If you'd like to add your own custom styles:
+
+1. Create a file called `/assets/css/style.scss` in your site
+
+2. Add the following content to the top of the file, exactly as shown:
+
+    ```scss
+    ---
+    ---
+
+    @import "panthera-jekyll";
+    ```
+
+3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
+
+*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
+
+## Blog Posts
+
+### Creating Posts
+
+To create a post, add a file to your `_posts` directory with the following format:
+
+```
+YEAR-MONTH-DAY-title.MARKUP
+```
+
+Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. For example, the following are examples of valid post filenames:
+
+```
+2020-07-10-new-years-eve-is-awesome.md
+```
+
+```md
+---
+layout: post
+title: First Demo Post
+date: 2020-07-10 13:32:20 +0300
+description: Post description (optional)
+image: /image.jpg (optional)
+tags: [Holidays, Hawaii]
+---
+
+Post content here
+```
+
+### Displaying an index of posts
+
+1. Create a page, e.g. `posts.md`, with the following content:
+
+```md
+---
+layout: post
+---
+
+# PAGE TITLE HERE
+
+{% include posts/index.html %}
+```
+
+2. Add a link to the left pane in your `_config.yml`
+
+```yml
+menu:
+  ...
+  - text: Blog Posts
+    link: /posts
+    icon: ""
+```
+
+...and you're good
+
+More post features are coming soon. To get updates on new features, hit the `Watch` button at the top of this page to get notifications.
+
+If you love this project, kindly hit the `Star` button at the top of this page.
+
+Follow me on [Github](//github.com/christianezeani) to see more of my projects.
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/chrisitanezeani/panthera-jekyll. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://contributor-covenant.org) code of conduct.
+
+## License
+
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
